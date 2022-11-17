@@ -29,16 +29,17 @@ Docker is required to run this containerized app
 $ git clone https://github.com/ShubhranshuSingh/fetch_rewards_coding_assessment.git
 $ cd fetch_rewards_coding_assessment
 ```
-2. Build Image: 
+2. Build Image 
 ```bash
 $ docker build -t flask_app .
 ```
-3. Start flask app:
+3. Start flask app
 ```bash
 $ docker run -it -p 5000:5000 flask_app
 ```
 ## API
 1. Use a browser to access [http://localhost:5000/](http://localhost:5000/). Submit the form after specifying Image dimensions and Corner points as shown below
+
 ![form](form.png)
 2. Alternatively, cURL can be used to generate a POST request as follows
 ```bash
