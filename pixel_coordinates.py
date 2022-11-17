@@ -37,13 +37,12 @@ def check_args(img_dim, corner_pts):
     elif len(corner_pts) != 4:
         logger.error(f"Expected length of corner_pts to be 4, got {len(corner_pts)}")
         return False
-    else:
-        if not all(isinstance(pt, tuple) for pt in corner_pts):
-            logger.error("Expected all elements of corner_pts to be tuple")
-            return False
-        elif not all(len(pt) == 2 for pt in corner_pts):
-            logger.error("Expected length of all elements in corner_pt to be 2")
-            return False
+    elif not all(isinstance(pt, tuple) for pt in corner_pts):
+        logger.error("Expected all elements of corner_pts to be tuple")
+        return False
+    elif not all(len(pt) == 2 for pt in corner_pts):
+        logger.error("Expected length of all elements in corner_pt to be 2")
+        return False
     return True
 
 def make_grid(img_dim, corner_pts):
