@@ -2,9 +2,10 @@ FROM python:3.6.9-slim
 
 WORKDIR fetch_rewards
 
-COPY . ./
-EXPOSE 5000
-
+COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
-CMD ["flask", "run"]
+COPY . ./
+
+EXPOSE 5000
+CMD [ "flask", "run","--host","0.0.0.0","--port","5000"]
